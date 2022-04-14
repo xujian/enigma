@@ -4,7 +4,7 @@ import { MatSelectChange } from '@angular/material/select';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { environment as env } from '../../environments/environment';
+import { environment as env } from '../environments/environment';
 
 import {
   authLogin,
@@ -16,11 +16,11 @@ import {
   selectSettingsLanguage,
   selectEffectiveTheme,
   AppState
-} from '../core/core.module';
+} from './core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
   actionSettingsChangeLanguage
-} from '../core/settings/settings.actions';
+} from './core/settings/settings.actions';
 
 @Component({
   selector: 'anms-root',
