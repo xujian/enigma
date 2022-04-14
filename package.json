@@ -1,6 +1,6 @@
 {
-  "name": "angular-ngrx-material-starter",
-  "version": "12.4.0",
+  "name": "enigma",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
