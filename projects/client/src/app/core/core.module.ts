@@ -74,6 +74,7 @@ import {
   faInstagram,
   faYoutube
 } from '@fortawesome/free-brands-svg-icons';
+import { HeaderComponent } from './components/header/header.component';
 
 export {
   TitleService,
@@ -144,7 +145,7 @@ export function httpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  declarations: [],
+  declarations: [HeaderComponent],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: ErrorHandler, useClass: AppErrorHandler },
@@ -167,7 +168,10 @@ export function httpLoaderFactory(http: HttpClient) {
 
     // 3rd party
     FontAwesomeModule,
-    TranslateModule
+    TranslateModule,
+
+    // Project
+    HeaderComponent
   ]
 })
 export class CoreModule {
