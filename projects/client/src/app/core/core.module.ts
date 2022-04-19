@@ -75,6 +75,7 @@ import {
   faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from '../core/layout/footer/footer.component';
 
 export {
   TitleService,
@@ -145,7 +146,7 @@ export function httpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, FooterComponent],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: ErrorHandler, useClass: AppErrorHandler },
@@ -170,8 +171,9 @@ export function httpLoaderFactory(http: HttpClient) {
     FontAwesomeModule,
     TranslateModule,
 
-    // Project
-    HeaderComponent
+    // core module
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class CoreModule {

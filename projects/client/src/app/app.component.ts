@@ -4,8 +4,6 @@ import { MatSelectChange } from '@angular/material/select';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { environment as env } from '../environments/environment';
-
 import {
   routeAnimations,
   LocalStorageService,
@@ -22,10 +20,6 @@ import { actionSettingsChangeAnimationsPageDisabled } from './core/settings/sett
   animations: [routeAnimations]
 })
 export class AppComponent implements OnInit {
-  isProd = env.production;
-  envName = env.envName;
-  version = env.versions.app;
-  year = new Date().getFullYear();
   navigation = [
     { link: 'about', label: 'anms.menu.about' },
     { link: 'feature-list', label: 'anms.menu.features' },
