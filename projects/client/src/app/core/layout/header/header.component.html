@@ -1,4 +1,4 @@
-<div class="header" [style.position]="(sticky$ | async)
+<header class="header" [style.position]="(sticky$ | async)
   ? 'fixed'
   : 'inherit'" [class.mat-elevation-z4]="(sticky$ | async)">
   <mat-toolbar color="primary">
@@ -56,4 +56,4 @@
       </mat-select>
     </span>
   </mat-toolbar>
-</div>
+</header>
