@@ -1,18 +1,6 @@
 <div [class]="'theme-wrapper ' + (theme$ | async)">
   <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="push">
-      <div class="branding">
-        <span>{{ 'anms.title.short' | translate}}</span></div>
-      <mat-nav-list>
-        <a mat-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()" [routerLink]="[item.link]"
-          routerLinkActive="active">
-          {{item.label | translate}}
-        </a>
-        <a mat-list-item href="https://github.com/tomastrajan/angular-ngrx-material-starter" target="_blank" rel="noopener noreferrer">
-          Github
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
+    <app-nav></app-nav>
     <div class="wrapper">
       <app-header></app-header>
       <div class="content" [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig?.data?.title">

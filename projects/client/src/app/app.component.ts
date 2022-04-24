@@ -1,17 +1,16 @@
 import browser from 'browser-detect';
 import { Component, OnInit } from '@angular/core';
-import { MatSelectChange } from '@angular/material/select';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import {
   routeAnimations,
   LocalStorageService,
-  selectSettingsLanguage,
   selectEffectiveTheme,
   AppState
 } from './core/core.module';
 import { actionSettingsChangeAnimationsPageDisabled } from './core/settings/settings.actions';
+import { Bus } from './core/bus';
 
 @Component({
   selector: 'app-root',
@@ -20,21 +19,12 @@ import { actionSettingsChangeAnimationsPageDisabled } from './core/settings/sett
   animations: [routeAnimations]
 })
 export class AppComponent implements OnInit {
-  navigation = [
-    { link: 'about', label: 'anms.menu.about' },
-    { link: 'feature-list', label: 'anms.menu.features' },
-    { link: 'examples', label: 'anms.menu.examples' }
-  ];
-  navigationSideMenu = [
-    ...this.navigation,
-    { link: 'settings', label: 'anms.menu.settings' }
-  ];
-
   theme$: Observable<string> | undefined;
 
   constructor(
     private store: Store<AppState>,
-    private storageService: LocalStorageService
+    private storageService: LocalStorageService,
+    private bus: Bus
   ) {}
 
   private static isIEorEdgeOrSafari() {
@@ -52,5 +42,8 @@ export class AppComponent implements OnInit {
     }
 
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
+    this.bus.on('nav:open', (payload: any) => {
+      console.log('===000===000===Event nav:open', payload);
+    });
   }
 }

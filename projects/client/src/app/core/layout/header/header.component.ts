@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { Bus } from '../../bus';
 import {
   selectSettingsStickyHeader,
   selectIsAuthenticated,
@@ -34,7 +35,7 @@ export class HeaderComponent implements OnInit {
   sticky$?: Observable<boolean>;
   language$?: Observable<string>;
 
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<AppState>, private bus: Bus) {}
 
   ngOnInit(): void {
     this.sticky$ = this.store.pipe(select(selectSettingsStickyHeader));
@@ -54,5 +55,9 @@ export class HeaderComponent implements OnInit {
     this.store.dispatch(
       actionSettingsChangeLanguage({ language: event.value })
     );
+  }
+
+  onNavClick() {
+    this.bus.emit('nav:open');
   }
 }

@@ -76,6 +76,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from '../core/layout/footer/footer.component';
+import { NavComponent } from './layout/nav/nav.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 export {
   TitleService,
@@ -110,6 +112,7 @@ export function httpLoaderFactory(http: HttpClient) {
     CommonModule,
     HttpClientModule,
     FormsModule,
+    AppRoutingModule,
 
     // material
     MatSidenavModule,
@@ -146,7 +149,7 @@ export function httpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, NavComponent],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: ErrorHandler, useClass: AppErrorHandler },
@@ -173,7 +176,8 @@ export function httpLoaderFactory(http: HttpClient) {
 
     // core module
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NavComponent
   ]
 })
 export class CoreModule {

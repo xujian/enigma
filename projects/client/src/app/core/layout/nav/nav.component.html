@@ -1,0 +1,16 @@
+<mat-sidenav mode="side" [opened]="opened">
+  <div class="branding">
+    <span>{{ 'anms.title.short' | translate}}</span>
+  </div>
+  <mat-nav-list>
+    <a mat-list-item *ngFor="let item of navigationSideMenu"
+      [routerLink]="[item.link]"
+      (click)="close()"
+      routerLinkActive="active">
+      {{item.label | translate}}
+    </a>
+    <a mat-list-item href="https://github.com/tomastrajan/angular-ngrx-material-starter" target="_blank" rel="noopener noreferrer">
+      Github
+    </a>
+  </mat-nav-list>
+</mat-sidenav>

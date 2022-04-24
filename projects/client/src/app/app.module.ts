@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { Bus } from './core/bus';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { AppComponent } from './app.component';
     // app
     AppRoutingModule
   ],
+  providers: [Bus],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
 })
