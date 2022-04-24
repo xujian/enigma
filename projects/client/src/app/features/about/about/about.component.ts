@@ -1,4 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  OnDestroy
+} from '@angular/core';
+import { BaseComponent } from '../../../core';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
 
@@ -8,11 +14,13 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
   styleUrls: ['./about.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent extends BaseComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   releaseButler = 'assets/release-butler.png';
 
-  constructor() {}
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.on('nav:open', (payload) => {
+      console.log('about.com on nav:open', payload);
+    });
+  }
 }

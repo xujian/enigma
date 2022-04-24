@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Bus } from '../../bus';
+import { BaseComponent } from '../../base.component';
 
 @Component({
   selector: 'app-nav',
@@ -7,7 +7,7 @@ import { Bus } from '../../bus';
   styleUrls: ['./nav.component.scss'],
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class NavComponent implements OnInit {
+export class NavComponent extends BaseComponent implements OnInit {
   opened = false;
 
   navigation = [
@@ -21,14 +21,13 @@ export class NavComponent implements OnInit {
     { link: 'settings', label: 'anms.menu.settings' }
   ];
 
-  constructor(private bus: Bus) {}
-
   toggle() {
     this.opened = !this.opened;
   }
 
   ngOnInit(): void {
-    this.bus.on('nav:open', () => {
+    this.bus.on('nav:open', (payload: any) => {
+      console.log('nav.com === on nav:open===');
       this.toggle();
     });
   }

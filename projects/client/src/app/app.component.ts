@@ -40,10 +40,6 @@ export class AppComponent implements OnInit {
         })
       );
     }
-
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
-    this.bus.on('nav:open', (payload: any) => {
-      console.log('===000===000===Event nav:open', payload);
-    });
   }
 }
