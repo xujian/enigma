@@ -1,4 +1,4 @@
-import Bus from './bus.service';
-import Event from './event.class';
+import BusService, { BUS_SERVICE_TOKEN } from './bus.service'
+import Event from './event.class'
 
-export { Bus, Event };
+export { BusService, Event, BUS_SERVICE_TOKEN }
