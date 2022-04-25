@@ -1,0 +1,31 @@
+@import '../../../styles-variables';
+.background {
+  padding: 80px 0 0 0;
+  position: relative;
+
+  .actions {
+    text-align: center;
+    margin: 50px;
+    z-index: 1;
+
+    span {
+      display: inline-block;
+      font-weight: bold;
+      padding: 20px 10px 30px 10px;
+    }
+
+    a {
+      margin: 0 5px 10px 0;
+
+      &.actions-main {
+        text-transform: uppercase;
+        padding: 3px 24px;
+      }
+
+      fa-icon {
+        position: relative;
+        bottom: 1px;
+      }
+    }
+  }
+}
