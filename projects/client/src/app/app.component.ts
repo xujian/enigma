@@ -1,5 +1,5 @@
 import browser from 'browser-detect'
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewEncapsulation } from '@angular/core'
 import { Store, select } from '@ngrx/store'
 import { Observable } from 'rxjs'
 
@@ -15,6 +15,7 @@ import { actionSettingsChangeAnimationsPageDisabled } from './core/settings/sett
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   animations: [routeAnimations]
 })
 export class AppComponent implements OnInit {

@@ -71,7 +71,8 @@ import {
   faRocket,
   faPowerOff,
   faUserCircle,
-  faPlayCircle
+  faPlayCircle,
+  faEllipsisV
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
@@ -209,6 +210,7 @@ export class CoreModule {
     faIconLibrary.addIcons(
       faCog,
       faBars,
+      faEllipsisV,
       faRocket,
       faPowerOff,
       faUserCircle,

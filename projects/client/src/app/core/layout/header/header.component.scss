@@ -1,33 +1,43 @@
 @import '../../../../styles-variables';
-.header {
+.app-header {
   position: fixed;
   width: 100%;
   display: flex;
   z-index: 10;
 
-  .nav-button {
-    margin: 0 10px 0 0;
-  }
-
   fa-icon {
     font-size: 24px;
   }
 
+  .app-toolbar {
+    padding: 0;
+  }
+
+  .mat-button-base {
+    &.fit {
+      height: 100%;
+      width: 64px;
+    }
+  }
+
+  .title {
+    padding-left: 16px;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .nav-button {
+    margin: 0 10px 0 0;
+  }
+
   .branding {
     cursor: pointer;
-    overflow: hidden;
-    padding-top: 4px;
-    text-overflow: ellipsis;
-
-    &.center {
-      text-align: center;
-    }
-
-    img {
-      position: relative;
-      top: -2px;
-      width: 48px;
-      height: 48px;
+    .logo {
+      width: 24px;
+      height: 24px;
+      margin: 4px;
     }
   }
 

@@ -1,8 +1,13 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ViewEncapsulation
+} from '@angular/core'
 import { MatSelectChange } from '@angular/material/select'
 import { Store, select } from '@ngrx/store'
 import { Observable } from 'rxjs'
-import { BaseComponent } from '../../base.component'
+import { BaseComponent } from '@/core/'
 import {
   selectSettingsStickyHeader,
   selectIsAuthenticated,
@@ -17,7 +22,8 @@ import { actionSettingsChangeLanguage } from '../../settings/settings.actions'
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent extends BaseComponent implements OnInit {
   navigation = [
