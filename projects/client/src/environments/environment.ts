@@ -3,10 +3,10 @@
 // `ng build --configuration production` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
-const packageJson = require('../../../../package.json');
+const packageJson = require('../../../../package.json')
 
 export const environment = {
-  appName: 'Angular Ngrx Material Starter',
+  appName: 'Enigma',
   envName: 'DEV',
   production: false,
   test: false,
@@ -25,4 +25,4 @@ export const environment = {
     cypress: packageJson.devDependencies['cypress'],
     eslint: packageJson.devDependencies['eslint']
   }
-};
+}
