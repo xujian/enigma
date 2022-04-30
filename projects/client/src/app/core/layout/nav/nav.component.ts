@@ -1,11 +1,17 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ViewEncapsulation
+} from '@angular/core'
 import { BaseComponent } from '../../base.component'
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
+  encapsulation: ViewEncapsulation.None
 })
 export class NavComponent extends BaseComponent implements OnInit {
   opened = false

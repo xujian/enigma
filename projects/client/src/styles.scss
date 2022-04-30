@@ -40,8 +40,8 @@
 }
 
 .default-theme {
-  @include mat.all-component-themes($anms-theme);
-  @include custom-components-theme($anms-theme);
+  @include mat.all-component-themes($anms-black-theme);
+  @include custom-components-theme($anms-black-theme);
 }
 
 .light-theme {

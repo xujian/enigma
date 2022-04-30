@@ -18,4 +18,5 @@ $grid-breakpoints: (
 $success-colors: mat.define-palette(mat.$green-palette, 400);
 $warning-colors: mat.define-palette(mat.$amber-palette, 400);
 
-$global-border-radius: 14px;
+$small-component-radius: 14px !default;
+$mat-button-border-radius: 14px !default;

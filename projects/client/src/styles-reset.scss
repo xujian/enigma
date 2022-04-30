@@ -24,3 +24,10 @@ p {
     border-bottom: 3px solid;
   }
 }
+
+.mat-button,
+.mat-flat-button,
+.mat-icon-button,
+.mat-raised-button {
+  border-radius: $small-component-radius !important;
+}
